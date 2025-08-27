@@ -1,53 +1,45 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     services: [
-      'Social Media Marketing',
-      'Performance Marketing',
-      'SEO Services',
-      'Web Development',
-      'UI/UX Design'
+      { name: 'Social Media Marketing', path: '/services' },
+      { name: 'Performance Marketing', path: '/services' },
+      { name: 'SEO Services', path: '/services' },
+      { name: 'Web Development', path: '/services' },
+      { name: 'UI/UX Design', path: '/services' }
     ],
     company: [
-      'About Us',
-      'Our Team',
-      'Careers',
-      'Blog',
-      'Contact'
+      { name: 'About Us', path: '/about' },
+      { name: 'Our Work', path: '/work' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'Contact', path: '/contact' }
     ],
     support: [
-      'Help Center',
-      'Privacy Policy',
-      'Terms of Service',
-      'Cookie Policy',
-      'Sitemap'
+      { name: 'Help Center', path: '#' },
+      { name: 'Privacy Policy', path: '#' },
+      { name: 'Terms of Service', path: '#' },
+      { name: 'Cookie Policy', path: '#' }
     ]
-  };
-
-  const scrollToSection = (sectionId) => {
-    const element = document.querySelector(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer */}
-      <div className="section-padding">
-        <div className="container-custom">
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <div className="flex items-center space-x-2 mb-6">
+              <Link to="/" className="flex items-center space-x-2 mb-6">
                 <div className="bg-gradient-to-r from-primary to-secondary p-2 rounded-lg">
                   <span className="text-white font-bold text-xl">A</span>
                 </div>
                 <span className="text-2xl font-bold">Adifly</span>
-              </div>
+              </Link>
               <p className="text-gray-400 leading-relaxed mb-6">
                 We are a leading digital marketing agency dedicated to helping businesses 
                 achieve exceptional growth through innovative strategies and cutting-edge solutions.
@@ -69,18 +61,14 @@ const Footer = () => {
             <div>
               <h3 className="text-xl font-semibold mb-6">Services</h3>
               <ul className="space-y-3">
-                {footerLinks.services.map((service) => (
-                  <li key={service}>
-                    <a
-                      href="#services"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        scrollToSection('#services');
-                      }}
+                {footerLinks.services.map((service, index) => (
+                  <li key={index}>
+                    <Link
+                      to={service.path}
                       className="text-gray-400 hover:text-primary transition-colors duration-300"
                     >
-                      {service}
-                    </a>
+                      {service.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -90,14 +78,14 @@ const Footer = () => {
             <div>
               <h3 className="text-xl font-semibold mb-6">Company</h3>
               <ul className="space-y-3">
-                {footerLinks.company.map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
+                {footerLinks.company.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      to={item.path}
                       className="text-gray-400 hover:text-primary transition-colors duration-300"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -107,13 +95,13 @@ const Footer = () => {
             <div>
               <h3 className="text-xl font-semibold mb-6">Support</h3>
               <ul className="space-y-3">
-                {footerLinks.support.map((item) => (
-                  <li key={item}>
+                {footerLinks.support.map((item, index) => (
+                  <li key={index}>
                     <a
-                      href="#"
+                      href={item.path}
                       className="text-gray-400 hover:text-primary transition-colors duration-300"
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -125,8 +113,8 @@ const Footer = () => {
 
       {/* Newsletter */}
       <div className="border-t border-gray-800">
-        <div className="section-padding py-12">
-          <div className="container-custom">
+        <div className="py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
               <p className="text-gray-400 mb-6">
@@ -149,7 +137,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-800 py-6">
-        <div className="container-custom">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © {currentYear} Adifly. All rights reserved.

@@ -1,42 +1,32 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 100
-    });
-    
-    // Add smooth scrolling behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-    
-    return () => {
-      AOS.refresh();
-    };
-  }, []);
+// Pages
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Work from './pages/Work';
+import Contact from './pages/Contact';
+import Blog from './pages/Blog';
 
+function App() {
   return (
-    <div className="App overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Portfolio />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

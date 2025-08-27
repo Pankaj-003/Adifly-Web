@@ -14,33 +14,16 @@
   }
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-primary hover:bg-accent text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+@layer utilities {
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
   
-  .btn-secondary {
-    @apply bg-secondary hover:bg-dark text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
-  }
-  
-  .service-card {
-    @apply bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-primary relative;
-  }
-  
-  .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
-  }
-  
-  .container-custom {
-    @apply max-w-7xl mx-auto;
-  }
-
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
-  }
-
-  .hover-scale-102 {
-    @apply hover:scale-102;
+    animation: fadeIn 0.8s ease-out forwards;
   }
 }
 
@@ -54,15 +37,3 @@
     transform: translateY(0);
   }
 }
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* index */
