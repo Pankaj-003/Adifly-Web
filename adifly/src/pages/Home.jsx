@@ -14,6 +14,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 // import StatsSection from './components/StatsSection';
 import StatsSection from '../components/ExactStatsSection';
+import VideoSection from '../components/VideoHeroSection';
 // Toast Alert Component
 const ToastAlert = ({ type = 'success', message, onClose, duration = 5000 }) => {
   useEffect(() => {
@@ -364,6 +365,8 @@ const Home = () => {
 
       {/* Process Section */}
       <ProcessSection />
+      {/* video */}
+      <VideoSection/>
       {/* Stats Section */}
    <StatsSection />
       {/* Services Section */}

@@ -240,12 +240,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #7cc644, #076c4e);
+  /* background: linear-gradient(to bottom, #7cc644, #076c4e); */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #5cb032, #064a3a);
+  /* background: linear-gradient(to bottom, #5cb032, #064a3a); */
 }
 
 /* Print styles */
@@ -297,42 +297,29 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #7cc644, #076c4e);
+  /* background: linear-gradient(to bottom, #7cc644, #076c4e); */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #5cb032, #064a3a);
-}
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+  /* background: linear-gradient(to bottom, #5cb032, #064a3a); */
 }
 
-/* Line clamp utility */
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #7cc644, #076c4e);
+  /* background: linear-gradient(to bottom, #7cc644, #076c4e); */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #5cb032, #064a3a);
+  /* background: linear-gradient(to bottom, #5cb032, #064a3a); */
 }
 /* Marquee animation for scrolling text */
 /* Enhanced marquee with smooth hover pause */
@@ -431,9 +418,9 @@ background-color: #076c4e;
 .d{
   /* border: 1px solid #064a3a; */
   background-color: #7cc644;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
-.Main-section{
-  /* bottom: 1px solid rgb(107, 1, 255); */
-  /* border: 1px solid red; */
+.Main-section {
+border: 1px solid #064a3a;
+padding-top: 80px;
 }

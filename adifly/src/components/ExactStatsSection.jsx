@@ -171,8 +171,7 @@ const TildeSlider = () => {
       </div>
 
       {/* Gradient Overlays */}
-      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#076c4e] to-transparent pointer-events-none z-10"></div>
-      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#076c4e] to-transparent pointer-events-none z-10"></div>
+
     </div>
   );
 };
