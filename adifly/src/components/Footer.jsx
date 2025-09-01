@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footerlogo from '../assets/Adifly-logo.png';
-
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6"; 
 const Footer = () => {
   const year = new Date().getFullYear();
 
@@ -17,7 +18,7 @@ const Footer = () => {
     company: [
       { label: 'About', to: '/about' },
       { label: 'Work', to: '/work' },
-      { label: 'Blog', to: '/blog' },
+      { label: 'Services', to: '/services' },
       { label: 'Careers', to: '/about' },
       { label: 'Contact', to: '/contact' },
     ],
@@ -51,23 +52,63 @@ const Footer = () => {
             </p>
 
             {/* Social Media Links */}
-            <div className="flex gap-3 mt-5 sm:mt-6">
-              {[
-                { label: 'Facebook', char: 'f' },
-                { label: 'X', char: 'x' },
-                { label: 'LinkedIn', char: 'in' },
-                { label: 'Instagram', char: 'ig' },
-              ].map((s) => (
-                <a
-                  key={s.label}
-                  aria-label={s.label}
-                  href="#"
-                  className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center uppercase text-sm font-bold transition-colors"
-                >
-                  {s.char}
-                </a>
-              ))}
-            </div>
+          
+            {/* Social Media Links */}
+{/* <div className="flex gap-3 mt-5 sm:mt-6">
+  {[
+    { label: 'Facebook', char: 'f', url: 'https://facebook.com/yourusername' },
+    { label: 'X', char: 'x', url: 'https://x.com/yourusername' },
+    { label: 'LinkedIn', char: 'in', url: 'https://linkedin.com/in/yourusername' },
+    { label: 'Instagram', char: 'ig', url: 'https://instagram.com/yourusername' },
+  ].map((s) => (
+    <a
+      key={s.label}
+      aria-label={s.label}
+      href={s.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center uppercase text-sm font-bold transition-colors"
+    >
+      {s.char}
+    </a>
+  ))}
+</div> */}
+<div className="flex gap-3 mt-5 sm:mt-6">
+  {[
+    {
+      label: "Facebook",
+      icon: <FaFacebookF className="text-lg" />,
+      href: "https://www.facebook.com/yorpage",
+    },
+    {
+      label: "X",
+      icon: <FaXTwitter className="text-lg" />,
+      href: "https://twitter.com/youprofile",
+    },
+    {
+      label: "LinkedIn",
+      icon: <FaLinkedinIn className="text-lg" />,
+      href: "https://linkedin.com/in/youprofile",
+    },
+    {
+      label: "Instagram",
+      icon: <FaInstagram className="text-lg" />,
+      href: "https://instagram.com/yourprfile",
+    },
+  ].map((s) => (
+    <a
+      key={s.label}
+      aria-label={s.label}
+      href={s.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+    >
+      {s.icon}
+    </a>
+  ))}
+</div>
+
           </div>
 
           {/* Columns */}

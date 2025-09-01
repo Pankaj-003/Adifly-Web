@@ -19,7 +19,6 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Work', path: '/work' },
-    { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -46,20 +45,9 @@ const Navbar = () => {
                   e.target.nextSibling.style.display = 'flex';
                 }}
               />
-              {/* Fallback logo */}
-              {/* <div 
-                className="bg-gradient-to-r from-primary to-secondary p-2 rounded-lg hidden"
-                style={{ display: 'none' }}
-              >
-                <span className="text-white font-bold text-xl">A</span>
-              </div> */}
+            
             </div>
-            {/* <div className="flex flex-col">
-              <span className="text-2xl font-bold text-gray-800 group-hover:text-primary transition-colors duration-300">
-                Adifly
-              </span>
-              <span className="text-xs text-gray-500 -mt-1">Digital Agency</span>
-            </div> */}
+          
           </Link>
 
           {/* Desktop Menu */}
