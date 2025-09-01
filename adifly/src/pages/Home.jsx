@@ -13,7 +13,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 // import StatsSection from './components/StatsSection';
-import StatsSection from '../../src/components/StatsSection';
+import StatsSection from '../components/ExactStatsSection';
 // Toast Alert Component
 const ToastAlert = ({ type = 'success', message, onClose, duration = 5000 }) => {
   useEffect(() => {

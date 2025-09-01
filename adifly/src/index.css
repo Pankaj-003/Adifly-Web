@@ -335,24 +335,105 @@ html {
   background: linear-gradient(to bottom, #5cb032, #064a3a);
 }
 /* Marquee animation for scrolling text */
+/* Enhanced marquee with smooth hover pause */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee2 {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  display: inline-block;
+  min-width: 200%;
+  animation: marquee 15s linear infinite;
 }
-/* Marquee animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
+
+.animate-marquee2 {
+  display: inline-block;
+  min-width: 200%;
+  animation: marquee2 18s linear infinite;
+}
+/* Hide scrollbars but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}
+
+/* Smooth text rendering */
+.text-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Add this to your src/index.css for additional styling */
+
+/* Tilde Slider Animations */
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.slide-left {
+  animation: slideLeft 30s linear infinite;
+}
+
+.slide-right {
+  animation: slideRight 25s linear infinite;
+}
+
+.slide-left:hover,
+.slide-right:hover {
+  animation-play-state: paused;
+}
+
+/* Tilde tilt effects */
+.tilt-up {
+  transform: skewY(-2deg);
+}
+
+.tilt-down {
+  transform: skewY(2deg);
+}
+
+/* Smooth text rendering */
+.slider-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* Number Section */
+.b-row, .t-row {
+  /* overflow: hidden;
+   */
+   /* border: 1px solid red; */
+   padding: 20px 0;
+}
+.t-row {
+background-color: #064a3a;
+}
+.b-row {
+background-color: #076c4e;
+}
+.d{
+  /* border: 1px solid #064a3a; */
+  background-color: #7cc644;
+  padding-bottom: 80px;
+}
+.Main-section{
+  /* bottom: 1px solid rgb(107, 1, 255); */
+  /* border: 1px solid red; */
 }
