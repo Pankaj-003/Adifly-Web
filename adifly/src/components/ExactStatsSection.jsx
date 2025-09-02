@@ -208,21 +208,21 @@ const ExactStatsSection = () => {
                 05
                 {/* Floating Labels */}
                 <FloatingLabel
-                  position={{ top: "-50px", left: "-100px" }}
+                  position={{ top: "-1px", left: "-90px" }}
                   rotation={-12}
                   delay={0.5}
                 >
                   Years of Experience
                 </FloatingLabel>
                 <FloatingLabel
-                  position={{ top: "80px", right: "-140px" }}
+                  position={{ top: "70px", right: "-140px" }}
                   rotation={15}
                   delay={0.8}
                 >
                   500+ Completed Projects
                 </FloatingLabel>
                 <FloatingLabel
-                  position={{ bottom: "-40px", left: "-80px" }}
+                  position={{ bottom: "-30px", left: "-90px" }}
                   rotation={-8}
                   delay={1.1}
                 >
