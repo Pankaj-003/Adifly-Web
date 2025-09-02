@@ -419,8 +419,32 @@ background-color: #076c4e;
   /* border: 1px solid #064a3a; */
   background-color: #7cc644;
   padding-bottom: 90px;
+  padding-top: 90px;
+
 }
 .Main-section {
-border: 1px solid #064a3a;
-padding-top: 80px;
+/* border: 1px solid #064a3a; */
+padding-top: 180px;
+}
+/* =================== */
+.video-mian{
+/* border:1px solid red; */
+border-radius:0px 0px 40px 40px;
+margin-bottom: -40px;
+z-index: 9;
+}
+.number{
+  /* border: 4px solid red; */
+}
+.h2-head{
+  font-size: 3.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #064a3a;
+  margin-bottom:40px;
+  /* border: 1px solid red; */
+}
+.stats-card-container{
+  /* border: 1px solid blue; */
+  padding-top: 20px;
 }

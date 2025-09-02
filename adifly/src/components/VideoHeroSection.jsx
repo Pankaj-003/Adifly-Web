@@ -16,7 +16,7 @@ const VideoHeroSection = () => {
   }, [inView]);
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden bg-dark">
+    <section ref={ref} className="relative video-mian h-screen overflow-hidden bg-dark">
       {/* Background Video */}
       <div className="absolute inset-0">
         <video

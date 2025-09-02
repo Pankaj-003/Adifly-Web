@@ -5,13 +5,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const AnimatedProgressBar = ({
-  label,
-  percentage,
-  backgroundColor = "bg-green-700",
-  delay = 0,
-  barColor = "#076c4e",
-}) => {
+const AnimatedProgressCard = ({ label, percentage, delay, dark }) => {
   const [ref, inView] = useInView({ threshold: 0.3, triggerOnce: true });
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
 
@@ -26,7 +20,7 @@ const AnimatedProgressBar = ({
             }
             return prev + 1;
           });
-        }, 25);
+        }, 20);
         return () => clearInterval(interval);
       }, delay);
       return () => clearTimeout(timer);
@@ -34,23 +28,26 @@ const AnimatedProgressBar = ({
   }, [inView, percentage, delay]);
 
   return (
-    <div ref={ref} className="mb-8">
-      <div className="flex justify-between items-center font-bold text-gray-900 mb-3 text-lg">
-        <span>{label}</span>
-        <span>{animatedPercentage}%</span>
-      </div>
-      <div className="w-full h-6 bg-gray-200 rounded-md overflow-hidden">
+    <div className="w-full mb-0">
+      {/* Background container */}
+      <div className="w-full bg-transparent rounded-md overflow-hidden">
+        {/* Animated width */}
         <motion.div
-          className={`h-full ${backgroundColor} rounded-md`}
+          ref={ref}
           initial={{ width: 0 }}
-          animate={inView ? { width: `${animatedPercentage}%` } : { width: 0 }}
-          transition={{ duration: 0.05 }}
-          style={{ backgroundColor: barColor }}
-        />
+          animate={inView ? { width: `${percentage}%` } : {}}
+          transition={{ duration: 1, delay: delay / 1000 }}
+          className={`p-8 rounded-md shadow-md flex justify-between items-center font-bold
+            ${dark ? "bg-black text-white" : "bg-white text-black"}`}
+        >
+          <span>{label}</span>
+          <span>{animatedPercentage}%</span>
+        </motion.div>
       </div>
     </div>
   );
 };
+
 
 const FloatingLabel = ({ children, position, rotation = 0, delay = 0 }) => {
   return (
@@ -190,7 +187,7 @@ const ExactStatsSection = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Side - Big Number */}
-            <div className="relative flex justify-center lg:justify-start">
+            <div className="relative number flex justify-center lg:justify-start">
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -235,36 +232,42 @@ const ExactStatsSection = () => {
             </div>
 
             {/* Right Side - Progress Bars */}
+            {/* <h2>Our agency’s expertise &
+impact in action</h2> */}
+
             <motion.div
               initial={{ opacity: 0, x: 60 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-8"
             >
-              <AnimatedProgressBar
-                label="Branding & Designing"
-                percentage={100}
-                barColor="#076c4e"
-                delay={400}
-              />
-              <AnimatedProgressBar
-                label="Marketing"
-                percentage={97}
-                barColor="#076c4e"
-                delay={700}
-              />
-              <div className="mb-8">
-                <div className="flex justify-between items-center font-bold text-gray-900 mb-3 text-lg">
-                  <span>Development</span>
-                  <span className="opacity-0">85%</span>
-                </div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 1 }}
-                  className="w-full h-6 bg-white border-2 border-gray-300 rounded-md"
-                />
-              </div>
+             <h2 className="h2-head">Our agency’s expertise & <br/>
+impact in action</h2>
+         <div className="stats-card-container w-full max-w-xl">
+
+        <AnimatedProgressCard
+          label="Branding & Designing"
+          percentage={100}
+          delay={400}
+          dark={true}
+        />
+        <AnimatedProgressCard
+          label="Marketing"
+          percentage={97}
+          delay={700}
+          dark={true}
+        />
+        <AnimatedProgressCard
+          label="Development"
+          percentage={85}
+          delay={1000}
+          dark={false}
+        />
+      
+          </div>  
+
+
+
             </motion.div>
           </div>
         </div>
