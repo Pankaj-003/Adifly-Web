@@ -15,6 +15,7 @@ import 'swiper/css/effect-coverflow';
 // import StatsSection from './components/StatsSection';
 import StatsSection from '../components/ExactStatsSection';
 import VideoSection from '../components/VideoHeroSection';
+import StackedHeadline from '../components/StackedHeadline';
 // Toast Alert Component
 const ToastAlert = ({ type = 'success', message, onClose, duration = 5000 }) => {
   useEffect(() => {
@@ -369,6 +370,8 @@ const Home = () => {
       <VideoSection/>
       {/* Stats Section */}
    <StatsSection />
+   {/* ----- */}
+   <StackedHeadline/>
       {/* Services Section */}
       <ServicesSection />
 
